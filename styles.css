@@ -1,13 +1,13 @@
 :root {
-  --forest: #0b3d2e;
-  --forest-deep: #06291f;
-  --sage: #dce5d6;
-  --lime: #cbdc70;
-  --paper: #f4f1e8;
-  --ink: #17221d;
-  --muted: #66736c;
-  --line: rgba(23, 34, 29, 0.17);
-  --white: #fffef9;
+  --forest: #174a4e;
+  --forest-deep: #0b2b30;
+  --sage: #edf5f4;
+  --lime: #c6ebe4;
+  --paper: #f8faf9;
+  --ink: #173034;
+  --muted: #637578;
+  --line: rgba(23, 48, 52, 0.14);
+  --white: #ffffff;
   --display: Georgia, "Times New Roman", serif;
   --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --shell: min(1180px, calc(100vw - 80px));
@@ -26,7 +26,7 @@ img { display: block; max-width: 100%; }
 a { color: inherit; }
 button { font: inherit; }
 .page-shell { width: var(--shell); margin-inline: auto; }
-.section-pad { padding: 130px 0; }
+.section-pad { padding: 88px 0; }
 .sr-only {
   position: absolute;
   width: 1px;
@@ -59,7 +59,7 @@ button { font: inherit; }
 }
 .site-header.scrolled,
 .site-header.solid {
-  background: rgba(244, 241, 232, .97);
+  background: rgba(248, 250, 249, .97);
   color: var(--ink);
   box-shadow: 0 1px 0 var(--line);
   backdrop-filter: blur(14px);
@@ -130,8 +130,9 @@ button { font: inherit; }
 
 .hero {
   position: relative;
-  min-height: 760px;
-  height: 100svh;
+  min-height: 650px;
+  height: 88svh;
+  max-height: 840px;
   overflow: hidden;
   color: var(--white);
   background: var(--forest);
@@ -140,13 +141,13 @@ button { font: inherit; }
 .hero-shade,
 .hero-grid { position: absolute; inset: 0; }
 .hero-image {
-  background: url("iitgn-campus.jpg") 58% 50% / cover no-repeat;
+  background: url("IITGN_picture.jpg") 58% 50% / cover no-repeat;
   transform: scale(1.01);
 }
 .hero-shade {
   background:
-    linear-gradient(90deg, rgba(5, 30, 23, .91) 0%, rgba(5, 30, 23, .72) 42%, rgba(5, 30, 23, .18) 78%),
-    linear-gradient(0deg, rgba(5, 30, 23, .52), transparent 45%);
+    linear-gradient(90deg, rgba(8, 43, 48, .90) 0%, rgba(8, 43, 48, .67) 42%, rgba(8, 43, 48, .16) 78%),
+    linear-gradient(0deg, rgba(8, 43, 48, .43), transparent 45%);
 }
 .hero-grid {
   width: var(--shell);
@@ -181,10 +182,15 @@ button { font: inherit; }
   line-height: .82;
   letter-spacing: -.055em;
 }
-.hero h1 em { color: var(--lime); font-weight: 400; }
+.hero h1 em {
+  color: var(--lime);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
 .hero-intro {
-  max-width: 510px;
-  margin: 38px 0 0;
+  max-width: 600px;
+  margin: 28px 0 0;
   font-size: 1.05rem;
   line-height: 1.65;
   color: rgba(255,255,255,.82);
@@ -215,13 +221,11 @@ button { font: inherit; }
   color: rgba(255,255,255,.65);
 }
 
-.focus-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 110px; }
-.kicker { color: #47705d; }
-.kicker.light { color: var(--lime); }
+.focus-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: 80px; }
+.kicker { color: #477579; }
+.kicker.light { color: #437176; }
 .section-heading h2,
-.application-title h2,
 .news-heading h2,
-.affiliation-grid h2,
 .placeholder-hero h1 {
   margin: 0;
   font-family: var(--display);
@@ -230,35 +234,63 @@ button { font: inherit; }
   line-height: .99;
   letter-spacing: -.045em;
 }
-.focus-copy { padding-top: 35px; }
-.lead { margin: 0; font-size: clamp(1.25rem, 2vw, 1.65rem); line-height: 1.55; }
-.research-pillars { margin-top: 55px; border-top: 1px solid var(--line); }
-.research-pillars div {
-  display: grid;
-  grid-template-columns: 55px 1fr;
-  align-items: center;
-  min-height: 72px;
-  border-bottom: 1px solid var(--line);
+.section-heading h2 { font-size: clamp(2.35rem, 4.1vw, 3.8rem); line-height: 1.04; }
+.focus-copy { padding-top: 22px; }
+.lead { margin: 0; font-size: clamp(1.08rem, 1.55vw, 1.35rem); line-height: 1.65; }
+.venn {
+  position: relative;
+  width: min(100%, 450px);
+  aspect-ratio: 1.34;
+  margin: 38px auto 0;
 }
-.research-pillars span { font-size: .68rem; color: var(--muted); }
-.research-pillars p { margin: 0; font-size: .86rem; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; }
+.venn-circle {
+  position: absolute;
+  display: grid;
+  width: 52%;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgba(23, 74, 78, .25);
+  border-radius: 50%;
+  color: #244e52;
+  font-size: clamp(.68rem, 1.15vw, .83rem);
+  font-weight: 750;
+  letter-spacing: .08em;
+  line-height: 1.35;
+  text-align: center;
+  text-transform: uppercase;
+}
+.venn-ml { top: 0; left: 6%; background: rgba(190, 225, 221, .65); }
+.venn-sm { top: 0; right: 6%; background: rgba(203, 222, 238, .62); }
+.venn-qc { right: 24%; bottom: 0; background: rgba(231, 221, 196, .65); }
+.venn-center {
+  position: absolute;
+  z-index: 2;
+  top: 43%;
+  left: 50%;
+  color: var(--forest-deep);
+  font-size: clamp(.78rem, 1.3vw, .95rem);
+  line-height: 1.05;
+  text-align: center;
+  text-transform: uppercase;
+  transform: translate(-50%, -50%);
+}
 
-.applications-section { padding: 130px 0; background: var(--forest); color: var(--white); }
-.application-title { max-width: 800px; margin-bottom: 80px; }
-.application-list { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,.2); }
-.application-list article { min-height: 265px; padding: 30px 40px 20px 0; border-right: 1px solid rgba(255,255,255,.2); }
+.applications-section { padding: 72px 0; background: var(--sage); color: var(--ink); }
+.application-title { max-width: 720px; margin-bottom: 42px; }
+.application-title h2 { margin: 0; font-family: var(--display); font-size: clamp(2.1rem, 3.8vw, 3.35rem); font-weight: 400; line-height: 1.02; letter-spacing: -.04em; }
+.application-list { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
+.application-list article { min-height: 175px; padding: 26px 34px 15px 0; border-right: 1px solid var(--line); }
 .application-list article:not(:first-child) { padding-left: 40px; }
 .application-list article:last-child { border-right: 0; }
-.application-number { display: block; margin-bottom: 60px; font-size: .68rem; letter-spacing: .15em; color: var(--lime); }
-.application-list h3 { margin: 0 0 18px; font-family: var(--display); font-size: 2rem; font-weight: 400; }
-.application-list p { max-width: 300px; margin: 0; color: rgba(255,255,255,.66); line-height: 1.65; }
+.application-list h3 { margin: 0 0 13px; font-family: var(--display); font-size: 1.55rem; font-weight: 400; }
+.application-list p { max-width: 300px; margin: 0; color: var(--muted); font-size: .92rem; line-height: 1.55; }
 
 .news-grid { display: grid; grid-template-columns: .65fr 1.35fr; gap: 90px; align-items: start; }
 .news-card {
   display: flex;
   justify-content: space-between;
-  min-height: 240px;
-  padding: 35px;
+  min-height: 180px;
+  padding: 28px;
   border-top: 1px solid var(--ink);
   border-bottom: 1px solid var(--line);
   background: rgba(255,255,255,.28);
@@ -267,21 +299,21 @@ button { font: inherit; }
 .news-card h3 { max-width: 620px; margin: 0; font-family: var(--display); font-size: clamp(1.7rem, 3vw, 2.65rem); font-weight: 400; line-height: 1.12; }
 .news-icon { color: var(--forest); font-size: 1.5rem; }
 
-.affiliation-section { padding: 110px 0; background: var(--sage); }
-.affiliation-grid { display: grid; grid-template-columns: 1fr .65fr; gap: 100px; align-items: center; }
-.affiliation-grid p:not(.kicker) { max-width: 490px; margin: 28px 0 0; color: var(--muted); line-height: 1.7; }
+.affiliation-section { padding: 64px 0; background: var(--white); border-top: 1px solid var(--line); }
+.affiliation-inner > .kicker { margin-bottom: 28px; }
+.affiliation-identity { display: flex; align-items: center; gap: 42px; }
+.affiliation-identity h2 { max-width: 720px; margin: 0; font-family: var(--display); font-size: clamp(2rem, 3.7vw, 3.25rem); font-weight: 400; line-height: 1.02; letter-spacing: -.04em; }
+.affiliation-identity p { max-width: 520px; margin: 14px 0 0; color: var(--muted); line-height: 1.6; }
+.affiliation-identity .text-link { margin-top: 18px; }
 .iitgn-logo-wrap {
-  display: grid;
-  min-height: 310px;
-  padding: 55px;
-  place-items: center;
-  background: var(--white);
-  transition: transform .25s ease, box-shadow .25s ease;
+  flex: 0 0 150px;
+  text-decoration: none;
+  transition: transform .25s ease;
 }
-.iitgn-logo-wrap:hover { transform: translateY(-4px); box-shadow: 0 18px 45px rgba(11,61,46,.12); }
-.iitgn-logo-wrap img { max-height: 185px; }
+.iitgn-logo-wrap:hover { transform: translateY(-3px); }
+.iitgn-logo-wrap img { width: 150px; height: auto; }
 
-.site-footer { padding: 75px 0 35px; background: var(--forest-deep); color: var(--white); }
+.site-footer { padding: 56px 0 28px; background: var(--forest-deep); color: var(--white); }
 .footer-grid { display: grid; grid-template-columns: 1fr auto; gap: 70px; }
 .footer-brand strong { font-family: var(--display); font-size: 1.8rem; font-weight: 400; line-height: 1.05; }
 .footer-brand p { margin: 22px 0 0; color: rgba(255,255,255,.55); font-size: .8rem; }
@@ -347,13 +379,11 @@ button { font: inherit; }
   .hero-grid { background: none; }
   .focus-grid,
   .news-grid,
-  .affiliation-grid,
   .placeholder-inner { grid-template-columns: 1fr; gap: 55px; }
   .focus-copy { padding-top: 0; }
   .application-list { grid-template-columns: 1fr; }
   .application-list article,
-  .application-list article:not(:first-child) { min-height: auto; padding: 32px 0; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.2); }
-  .application-number { margin-bottom: 28px; }
+  .application-list article:not(:first-child) { min-height: auto; padding: 25px 0; border-right: 0; border-bottom: 1px solid var(--line); }
   .application-list article:last-child { border-bottom: 0; }
   .placeholder-hero { background: var(--paper); }
 }
@@ -361,19 +391,22 @@ button { font: inherit; }
 @media (max-width: 640px) {
   :root { --shell: calc(100% - 36px); }
   .section-pad,
-  .applications-section { padding: 90px 0; }
+  .applications-section { padding: 68px 0; }
   .brand-copy small { display: none; }
-  .hero { min-height: 650px; height: 100svh; }
+  .hero { min-height: 620px; height: 86svh; }
   .hero-image { background-position: 65% 50%; }
   .hero-shade { background: linear-gradient(90deg, rgba(5,30,23,.93), rgba(5,30,23,.6)); }
   .hero-content { padding-top: 65px; }
   .hero h1 { font-size: clamp(3.45rem, 17vw, 5rem); line-height: .86; }
   .hero-intro { font-size: .96rem; }
   .hero-index { display: none; }
-  .application-title { margin-bottom: 50px; }
-  .news-card { min-height: 280px; padding: 28px 22px; }
-  .affiliation-section { padding: 85px 0; }
-  .iitgn-logo-wrap { min-height: 240px; padding: 38px; }
+  .venn { width: min(100%, 360px); margin-top: 30px; }
+  .application-title { margin-bottom: 34px; }
+  .news-card { min-height: 190px; padding: 24px 20px; }
+  .affiliation-section { padding: 56px 0; }
+  .affiliation-identity { align-items: flex-start; gap: 22px; }
+  .iitgn-logo-wrap { flex-basis: 92px; }
+  .iitgn-logo-wrap img { width: 92px; }
   .footer-grid { grid-template-columns: 1fr; gap: 45px; }
   .site-footer nav { grid-template-columns: repeat(2, 1fr); }
   .placeholder-hero { min-height: 80svh; padding: 150px 0 90px; }
