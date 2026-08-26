@@ -679,6 +679,96 @@ button { font: inherit; }
 .member-focus { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
 .member-focus span { padding: 8px 12px; border: 1px solid var(--line); border-radius: 999px; color: #39565a; font-size: .72rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
 
+.research-hero {
+  min-height: calc(100svh - 120px);
+  padding: 160px 0 90px;
+  background: var(--paper);
+}
+.research-layout { display: grid; gap: 55px; }
+.research-intro {
+  display: grid;
+  grid-template-columns: .65fr 1.35fr;
+  gap: 70px;
+  align-items: end;
+}
+.research-intro .placeholder-label { align-self: start; padding-top: 12px; }
+.research-intro h1 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(3.2rem, 6vw, 5.8rem);
+  font-weight: 400;
+  line-height: .95;
+  letter-spacing: -.05em;
+}
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+.research-area {
+  position: relative;
+  min-width: 0;
+  background: var(--white);
+}
+.research-area::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: var(--forest);
+}
+.research-energy::before { background: #bd8b45; }
+.research-drug::before { background: #7d6b9f; }
+.research-quantum::before { background: #4f78a2; }
+.research-figure {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  margin: 0;
+  overflow: hidden;
+  background: #fbfaf7;
+}
+.research-figure::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 34%;
+  background: linear-gradient(transparent, rgba(11, 43, 48, .58));
+  pointer-events: none;
+}
+.research-figure img { width: 100%; height: 100%; object-fit: cover; }
+.research-figure figcaption {
+  position: absolute;
+  z-index: 1;
+  inset: auto 22px 17px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  color: var(--white);
+  font-size: .65rem;
+  font-weight: 750;
+  letter-spacing: .08em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+.research-figure figcaption span:last-child { text-align: right; }
+.research-area-copy { padding: 34px 40px 42px; }
+.research-area h2 {
+  max-width: 430px;
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(1.85rem, 3vw, 2.7rem);
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: -.035em;
+}
+.research-area p { margin: 27px 0 0; color: var(--muted); font-size: .98rem; line-height: 1.7; }
+.research-area strong { color: #34585d; font-weight: 700; }
+.research-area em { color: var(--ink); }
+
 @media (max-width: 980px) {
   :root { --shell: min(100% - 48px, 760px); }
   .nav-shell { height: 76px; }
@@ -743,6 +833,8 @@ button { font: inherit; }
   .opportunity-copy { padding: 28px 0 34px; }
   .members-intro { grid-template-columns: 1fr; gap: 18px; }
   .member-profile { grid-template-columns: 240px 1fr; gap: 45px; }
+  .research-intro { grid-template-columns: 1fr; gap: 18px; }
+  .research-grid { grid-template-columns: 1fr; }
   .focus-copy { padding-top: 0; }
   .application-title h2 { white-space: normal; }
   .application-list { grid-template-columns: 1fr; }
@@ -796,6 +888,10 @@ button { font: inherit; }
   .members-layout { gap: 38px; }
   .member-profile { grid-template-columns: 1fr; gap: 34px; padding-top: 32px; }
   .member-photo { width: min(74vw, 270px); }
+  .research-hero { padding: 130px 0 65px; }
+  .research-layout { gap: 38px; }
+  .research-area-copy { padding: 28px 24px 34px; }
+  .research-figure figcaption { inset: auto 16px 13px; gap: 12px; font-size: .58rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
