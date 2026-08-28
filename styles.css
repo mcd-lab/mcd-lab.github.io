@@ -16,7 +16,11 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
 body {
   margin: 0;
   background: var(--paper);
@@ -880,6 +884,8 @@ button { font: inherit; }
 
 @media (max-width: 980px) {
   :root { --shell: min(100% - 48px, 760px); }
+  .site-header.scrolled,
+  .site-header.solid { backdrop-filter: none; }
   .nav-shell { height: 76px; }
   .nav-toggle {
     position: relative;
@@ -897,6 +903,7 @@ button { font: inherit; }
   .nav-toggle span:nth-child(3) { top: 25px; }
   .nav-toggle[aria-expanded="true"] span:nth-child(2) { top: 21px; transform: rotate(45deg); }
   .nav-toggle[aria-expanded="true"] span:nth-child(3) { top: 21px; transform: rotate(-45deg); }
+  .nav-toggle[aria-expanded="true"] { color: var(--white); }
   .primary-nav {
     position: fixed;
     inset: 0;
@@ -906,6 +913,8 @@ button { font: inherit; }
     justify-content: center;
     gap: 10px;
     padding: 90px 10vw;
+    overflow-y: auto;
+    overscroll-behavior: contain;
     background: var(--forest-deep);
     color: var(--white);
     visibility: hidden;
@@ -956,6 +965,9 @@ button { font: inherit; }
   :root { --shell: calc(100% - 36px); }
   .section-pad,
   .applications-section { padding: 68px 0; }
+  .brand,
+  .nav-toggle { min-height: 44px; }
+  .nav-toggle { width: 44px; height: 44px; }
   .brand-copy small { display: none; }
   .hero { min-height: 560px; height: 76svh; }
   .hero-image { background-position: 65% 50%; }
@@ -964,6 +976,12 @@ button { font: inherit; }
   .hero h1 { font-size: clamp(3rem, 13.5vw, 4.2rem); line-height: .9; }
   .hero-intro { font-size: .96rem; }
   .hero-index { display: none; }
+  .text-link,
+  .news-all-link,
+  .news-controls button,
+  .scholar-link,
+  .member-links a,
+  .updates-item a { min-height: 44px; align-items: center; }
   .focus-grid { gap: 38px; }
   .venn-frame { width: min(100%, 420px); }
   .application-title { margin-bottom: 34px; }
@@ -982,6 +1000,7 @@ button { font: inherit; }
   .updates-hero { padding: 130px 0 58px; }
   .updates-archive { padding: 48px 0 72px; }
   .updates-toolbar { align-items: flex-start; flex-direction: column; margin-bottom: 38px; }
+  .updates-filters button { min-height: 44px; }
   .updates-item { grid-template-columns: 1fr auto; gap: 12px 22px; }
   .updates-item time { grid-column: 1; }
   .updates-item > div { grid-column: 1 / -1; }
@@ -992,6 +1011,7 @@ button { font: inherit; }
   .iitgn-logo-wrap img { width: 92px; }
   .footer-grid { grid-template-columns: 1fr; gap: 45px; }
   .site-footer nav { grid-template-columns: repeat(2, 1fr); }
+  .site-footer nav a { display: flex; min-height: 44px; align-items: center; }
   .placeholder-hero { min-height: 80svh; padding: 150px 0 90px; }
   .publication-hero { padding: 112px 0 34px; }
   .publication-section { padding: 48px 0 70px; }
@@ -1008,6 +1028,7 @@ button { font: inherit; }
   .outreach-photo { margin-top: 24px; }
   .join-hero { padding: 100px 0 32px; }
   .join-layout { gap: 22px; }
+  .opportunity-copy > p:last-child { text-align: left; text-justify: auto; }
   .members-hero { padding: 112px 0 60px; }
   .members-layout { gap: 28px; }
   .member-profile { grid-template-columns: 1fr; gap: 34px; padding-top: 32px; }
@@ -1016,7 +1037,19 @@ button { font: inherit; }
   .research-layout { gap: 28px; }
   .research-area-copy { padding: 28px 24px 34px; }
   .research-area h2 { font-size: 1.55rem; white-space: normal; }
-  .research-figure figcaption { inset: auto 16px 13px; gap: 12px; font-size: .58rem; }
+  .research-figure figcaption { inset: auto 16px 13px; gap: 12px; font-size: .65rem; line-height: 1.35; }
+}
+
+@media (max-width: 980px) and (max-height: 600px) {
+  .primary-nav {
+    justify-content: flex-start;
+    gap: 2px;
+    padding-top: 72px;
+    padding-bottom: 24px;
+  }
+  .primary-nav a { font-size: clamp(1.45rem, 7vh, 2.1rem); }
+  .hero { min-height: 480px; height: auto; }
+  .hero-content { min-height: 480px; padding-top: 90px; padding-bottom: 50px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

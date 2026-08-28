@@ -13,6 +13,7 @@ window.addEventListener('scroll', updateHeader, { passive: true });
 if (navToggle && navigation) {
   navToggle.addEventListener('click', () => {
     const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+    if (!isOpen) navigation.scrollTop = 0;
     navToggle.setAttribute('aria-expanded', String(!isOpen));
     navigation.classList.toggle('open', !isOpen);
     document.body.style.overflow = isOpen ? '' : 'hidden';
