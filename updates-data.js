@@ -2,6 +2,15 @@
 // automatically sort entries by date, newest first.
 window.MCD_UPDATES = [
   {
+    id: 'mazharuddin-quazi-joins-mcd-lab',
+    date: '2026-09-15',
+    category: 'Lab update',
+    title: 'Mazharuddin A. Quazi joins the MCD Lab as a Postdoctoral Researcher',
+    tabLabel: 'Mazharuddin joins MCD Lab',
+    url: 'members.html',
+    source: 'MCD Lab'
+  },
+  {
     id: 'silicon-carbide-defect-jctc',
     date: '2026-04-15',
     category: 'Publication',
