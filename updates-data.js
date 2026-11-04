@@ -2,6 +2,15 @@
 // automatically sort entries by date, newest first.
 window.MCD_UPDATES = [
   {
+    id: 'mtech-students-khushbu-arnav',
+    date: '2026-11-04',
+    category: 'Lab update',
+    title: 'Welcoming Khushbu Chaudhary and Arnav Lasod to the MCD Lab as M.Tech. students',
+    tabLabel: 'Welcoming our M.Tech. students',
+    url: 'members.html#khushbu-chaudhary',
+    source: 'MCD Lab'
+  },
+  {
     id: 'mazharuddin-quazi-joins-mcd-lab',
     date: '2026-09-15',
     category: 'Lab update',
